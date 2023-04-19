@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student F</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<h1>enter student details</h1>
+<form method="POST" action="/index/">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col">
+            <label for="lname">firstname</label>
+
+        </div>
+        <div class="col">
+         {{ form.firstname }}
+        </div>
+    </div>
+    <br>
+
+
+
+    <div class="row">
+        <div class="col">
+            <label for="lname">lastname</label>
+
+
+    </div>
+        <div class="col">
+         {{ form.lastname }}
+        </div>
+       </div>
+    <br>
+
+
+
+        <div class="row">
+        <div class="col">
+            <label for="email">email</label>
+
+
+        </div>
+        <div class="col">
+         {{ form.email }}
+         </div>
+     </div>
+    <br>
+<center>   <button type="submit" class="btn btn-primary">submit</button></center>
+</form>
+
+</body>
+</html>
+
+{% endblock %}
